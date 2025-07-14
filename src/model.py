@@ -1,8 +1,9 @@
 from pydantic import BaseModel
+from typing import Optional
 
 class Order(BaseModel):
-    order_id: int
     item: str
     quantity: int
     price_per_item: float
-
+class getOrder(Order):
+    order_id: int
