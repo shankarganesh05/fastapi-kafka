@@ -1,4 +1,5 @@
 from sqlmodel import SQLModel,create_engine,Session,Field
+from datetime import datetime,timezone
 
 DATABASE_URL = "postgresql+psycopg2://postgres:postgres@localhost:5432/fastapi"
 
@@ -8,6 +9,7 @@ class Orders(SQLModel,table=True):
     item: str
     quantity: int = Field(nullable=False)
     price_per_item: float = Field(nullable=False)
+    created_at : datetime = Field(default_factory=lambda:datetime.now(timezone.utc))
 
 engine = create_engine(DATABASE_URL)
 

@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Optional
+from datetime import datetime
 
 class Order(BaseModel):
     item: str
@@ -7,3 +7,4 @@ class Order(BaseModel):
     price_per_item: float
 class getOrder(Order):
     order_id: int
+    created_at:datetime
