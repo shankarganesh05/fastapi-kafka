@@ -36,6 +36,13 @@ services:
       - 8080:80
     depends_on:
       - db
-
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - redis_data:/data
 volumes:
   kafka_data:
+  redis_data:
