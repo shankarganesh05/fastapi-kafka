@@ -1,0 +1,10 @@
+# kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - postgres_deployment.yaml
+  - redis_deployment.yaml
+  - zookeeper_deployment.yaml
+  - kafka_deployment.yaml
+  - pgadmin_deployment.yaml
+  - fastapi_deployment.yaml
