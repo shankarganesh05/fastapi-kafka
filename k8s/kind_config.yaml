@@ -1,0 +1,11 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+  - role: control-plane
+    extraPortMappings:
+      - containerPort: 30080  # NodePort used in your FastAPI service
+        hostPort: 30080
+        protocol: TCP
+      - containerPort: 30081  # NodePort used in your pgAdmin service
+        hostPort: 30081
+        protocol: TCP

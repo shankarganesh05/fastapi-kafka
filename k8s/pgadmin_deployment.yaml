@@ -4,14 +4,14 @@ kind: Service
 metadata:
   name: pgadmin
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: pgadmin
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-            
+      nodePort: 30081
 ---
 apiVersion: apps/v1
 kind: Deployment
