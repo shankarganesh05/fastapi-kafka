@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: fastapi
-          image: fastapi-kafka-api:latest
+          image: fastapi:v1
           imagePullPolicy: Never
           ports:
             - containerPort: 8000

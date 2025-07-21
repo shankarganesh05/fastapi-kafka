@@ -5,14 +5,19 @@ class Order(BaseModel):
     item: str
     quantity: int
     price_per_item: float
-class Users(BaseModel):
-    email: EmailStr
+class User(BaseModel):
+    Email: EmailStr
     password: str
+class UserResponse(BaseModel):
+    Email: EmailStr
+    
+    class Config:
+        from_attributes = True
 class getOrder(Order):
     order_id: int
     created_at:datetime
-class getUsers(Users):
-    email: EmailStr
+class getUsers(User):
+    Email: EmailStr
     id: int
 
 
