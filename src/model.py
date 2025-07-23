@@ -10,9 +10,6 @@ class User(BaseModel):
     password: str
 class UserResponse(BaseModel):
     Email: EmailStr
-    
-    class Config:
-        from_attributes = True
 class getOrder(Order):
     order_id: int
     created_at:datetime

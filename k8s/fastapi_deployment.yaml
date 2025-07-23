@@ -15,10 +15,17 @@ spec:
     spec:
       containers:
         - name: fastapi
-          image: fastapi:v1
+          image: fastapi:v2
           imagePullPolicy: Never
           ports:
             - containerPort: 8000
+          env:
+            - name: DB_HOST
+              value: "db"  # Kubernetes service name for Postgres
+            - name: REDIS_HOST
+              value: "redis"  # Kubernetes service name for Redis
+            - name: KAFKA_HOST
+              value: "kafka"  # Kubernetes service name for Kafka
 ---
 apiVersion: v1
 kind: Service

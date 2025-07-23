@@ -1,7 +1,11 @@
 from sqlmodel import SQLModel,create_engine,Session,Field
 from datetime import datetime,timezone
+import os
+from dotenv import load_dotenv
+load_dotenv()
+host= os.getenv("DB_HOST")
 
-DATABASE_URL = "postgresql+psycopg2://postgres:postgres@localhost:5432/fastapi"
+DATABASE_URL = f"postgresql+psycopg2://postgres:postgres@{host}:5432/fastapi"
 
 class Orders(SQLModel,table=True):
     __tablename__ = "Orders"

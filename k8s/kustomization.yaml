@@ -8,7 +8,7 @@ resources:
   - kafka_deployment.yaml
   - pgadmin_deployment.yaml
   - fastapi_deployment.yaml
-  - prometheus-configmap.yaml
-  - prometheus-deployment.yaml
-  - grafana-deployment.yaml
+  - prometheus_configmap.yaml
+  - prometheus_deployment.yaml
+  - grafana_deployment.yaml
   - ingress.yaml
